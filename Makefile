@@ -1,7 +1,7 @@
 FILE ?= "Exercise/pytest/example1.txt"
 REGEX ?= "grows"
 
-build:
+build-image:
 	@echo "Building container"
 	@cd build && sudo docker build -t exercise .
 
