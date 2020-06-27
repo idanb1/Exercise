@@ -30,7 +30,7 @@ def test_without_input_files():
     """
     print('Running test without input files')
     try:
-        runner(files='', regex='\d\d\d\d\d')
+        runner(files='', regex=r'\d\d\d\d\d')
         assert False
     except FileNotFoundError:
         assert True
@@ -59,7 +59,7 @@ def test_no_matches(data_init):
     :return:
     """
     print('Running test without successful matches')
-    results = runner(files=data_init['example_file1'], regex='\d')
+    results = runner(files=data_init['example_file1'], regex=r'\d')
     assert True if len(results[data_init['example_file1']]) == 0 else False
 
 
