@@ -2,7 +2,7 @@ import pytest
 import os
 from run_app import runner
 
-SCRIPT_DIR = os.getcwd()
+SCRIPT_DIR = os.path.dirname(__file__)
 
 
 @pytest.fixture()
@@ -13,9 +13,9 @@ def data_init():
     """
     # SETUP
     data_init = dict()
-    data_init['example_file1'] = f'{SCRIPT_DIR}/pytest/example1.txt'
-    data_init['example_file2'] = f'{SCRIPT_DIR}/pytest/example2.txt'
-    data_init['no_permissions'] = f'{SCRIPT_DIR}/pytest/NoPermissions.txt'
+    data_init['example_file1'] = os.path.join(SCRIPT_DIR, 'example1.txt')
+    data_init['example_file2'] = os.path.join(SCRIPT_DIR, 'example2.txt')
+    data_init['no_permissions'] = os.path.join(SCRIPT_DIR, 'NoPermissions.txt')
     print('doing things to setup')
     yield data_init
     # TEARDOWN
