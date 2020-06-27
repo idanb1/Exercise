@@ -13,10 +13,10 @@ Red Hat Python 3 HW script:
 
 
 
-Process explaination:
+Process explanation:
 
-At the very first steps of this task I've not heard about argParse module, so I created one by myself;
-The first struggle for me was to make 2 parameters mutually exclusive, then I googled a bit and found argParse docs.
-My solution using argParse from the main runner function, but I also included ParameterParser (the module I created) to show you my whole way for the solution.
-I think the next struggle was to learn more deeply about Docker because I didn't experienced with this area before.
+At the very first steps of this task I've not heard about argparse module, so I created one by myself;
+The first struggle for me was to make 2 parameters mutually exclusive, then I googled a bit and found argparse docs.
+My solution using argparse from the main runner function, but I also included ParameterParser (the module I created) to show you my whole way for the solution.
+I think the next struggle was to learn more deeply about Docker because I didn't have experience with this area before.
 
