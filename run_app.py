@@ -16,7 +16,7 @@ def runner(**kwargs):
         parser = argparse.ArgumentParser(description='RegexInFiles', prog='''
         This application is designed to search for regex matches in text files''', epilog='''
         Example of use: python run_app.py -c -f
-        ".\log03.txt,.\log04.txt" -r .*printMemoryUsage.*limit=.*''')
+        "./pytest/example1.txt" -r grows''')
         parser.add_argument('-f', '--files', type=str, required=True,
                             help='This is the files flag - **required flag',
                             action=UniqueStore)

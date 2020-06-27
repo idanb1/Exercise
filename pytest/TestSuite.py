@@ -1,5 +1,8 @@
 import pytest
+import os
 from run_app import runner
+
+SCRIPT_DIR = os.getcwd()
 
 
 @pytest.fixture()
@@ -10,9 +13,9 @@ def data_init():
     """
     # SETUP
     data_init = dict()
-    data_init['example_file1'] = './pytest/example1.txt'
-    data_init['example_file2'] = './pytest/example2.txt'
-    data_init['no_permissions'] = './pytest/NoPermissions.txt'
+    data_init['example_file1'] = f'{SCRIPT_DIR}/pytest/example1.txt'
+    data_init['example_file2'] = f'{SCRIPT_DIR}/pytest/example2.txt'
+    data_init['no_permissions'] = f'{SCRIPT_DIR}/pytest/NoPermissions.txt'
     print('doing things to setup')
     yield data_init
     # TEARDOWN
