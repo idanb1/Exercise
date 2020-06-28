@@ -36,21 +36,6 @@ def test_without_input_files():
         assert True
 
 
-#@pytest.mark.negative
-#def test_without_permission_files(data_init):
-#    """
-#    Running test without permission files
-#    :return:
-#    """
-#    print('Running test without permission files')
-#    try:
-#        runner(files=data_init['no_permissions'], regex='\d\d\d\d\d')
-#        assert False
-#    except PermissionError:
-#        assert True
-
-
-
 @pytest.mark.negative
 def test_no_matches(data_init):
     """
