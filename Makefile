@@ -19,7 +19,7 @@ app_runner:
 
 run-colorized-verbose:
 	@echo "Running colorized-verbose"
-	@sudo docker run --rm -v /home/ubuntu/Exercise/:/Exercise exercise python3 /Exercise/run_app.py -f ${FILE} -r ${REGEX} -c
+	@sudo docker run --rm -v /home/ubuntu/Exercise/:/Exercise exercise python3 /Exercise/run_app.py -f ${FILE} -r ${REGEX}
 
 run-interactive:
 	@echo "Running interactive container"
