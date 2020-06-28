@@ -11,6 +11,7 @@ RegexInFiles helps to search regex in text files,
 - bash
 - make
 - docker
+- git
 
 ## Usage
 
