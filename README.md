@@ -15,7 +15,7 @@ RegexInFiles helps to search regex in text files,
 
 ## Usage
 
-There's a MakeFile with 6 pre-configured methods (build-image, tests-run, tests-run-verbose, app_runner, run-colorized-verbose, run-interactive)
+There's a MakeFile with 5 pre-configured methods (build-image, tests-run, tests-run-verbose, app_runner, run-interactive)
 
 ###### Basic Use
 
@@ -52,19 +52,6 @@ First step - create a docker image:
   <br>
   <b># make app_runner FILE=/your_dir_path/your_file.txt REGEX=your_regex</b>
   <br>
-
- # run-colorized-verbose:
- <br>
-  <b># make run-colorized-verbose</b>
-  <br>
-
-  app_runner will run basic functionality of RegexInFiles app with colored matched lines on the created container with optional files / regex
-  - running 'make app_runner' without any files or regex will run default values (FILE=Exercise/pytest/example1.txt, REGEX=grows)
-  <br>
-  Example to use external files\regex:
-  <br>
-  <b># make app_runner FILE=/your_dir_path/your_file.txt REGEX=your_regex</b>
-<br>
 
 # run-interactive:
 <br>
