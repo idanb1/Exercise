@@ -9,6 +9,10 @@ run:
 	@echo "Running tests"
 	@sudo docker run --rm -v /home/ubuntu/Exercise/:/Exercise exercise python3 -m pytest /Exercise/pytest/TestSuite.py
 
+run-verbose:
+	@echo "Running tests"
+	@sudo docker run --rm -v /home/ubuntu/Exercise/:/Exercise exercise python3 -m pytest /Exercise/pytest/TestSuite.py -s
+
 app_runner:
 	@echo "Running app"
 	@sudo docker run --rm -v /home/ubuntu/Exercise/:/Exercise exercise python3 /Exercise/run_app.py -f ${FILE} -r ${REGEX}
