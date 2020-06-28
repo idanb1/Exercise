@@ -127,3 +127,7 @@ example1.txt:2:2020-06-28 15:10:00.382291:Banana grows on trees<br>
 <br>
 
 example1.txt:3:2020-06-28 15:10:00.383258:Coconut grows on trees
+
+
+
+* BTW - inside scatches dir there's a module that I create to parse parameters from CLI, later I understand argparse module is a better solution.
