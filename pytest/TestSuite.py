@@ -20,7 +20,7 @@ def data_init():
     data_init = dict()
     data_init['example_file1'] = os.path.join(SCRIPT_DIR, 'example1.txt')
     data_init['example_file2'] = os.path.join(SCRIPT_DIR, 'example2.txt')
-    data_init['no_permissions'] = os.path.join(SCRIPT_DIR, no_permissions_file.name)
+    data_init['no_permissions'] = no_permissions_file.name
     os.chmod(data_init['no_permissions'], 0o000)
     print('doing things to setup')
     yield data_init
