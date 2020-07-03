@@ -94,7 +94,7 @@ def test_without_permission_files(data_init):
     # Silence matches prints (prints appears when file read permissions is allowed'):
     with nostdout():
         try:
-            # Run RegexInFiles with expectetd file without any permissions
+            # Run RegexInFiles with expected file without any permissions
             runner(files=data_init['no_permissions'], regex=r'\d\d\d\d\d')
             assert False
         except PermissionError:
