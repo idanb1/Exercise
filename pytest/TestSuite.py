@@ -2,7 +2,7 @@ import contextlib
 import pytest
 import os
 import sys
-import subprocess
+from stat import S_IREAD, S_IRGRP, S_IROTH
 from run_app import runner
 
 SCRIPT_DIR = os.path.dirname(__file__)
@@ -90,7 +90,7 @@ def test_without_permission_files(data_init):
     no_permissions_file = open(data_init['no_permissions'], "w")
     no_permissions_file.write("Your text goes here876182735491256487")
     no_permissions_file.close()
-    os.chmod(data_init['no_permissions'], 0o000)
+    os.chmod(data_init['no_permissions'], S_IREAD | S_IRGRP | S_IROTH)
     # Silence matches prints (prints appears when file read permissions is allowed'):
     # with nostdout():
     try:
