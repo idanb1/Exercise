@@ -17,7 +17,7 @@ def data_init():
     # SETUP
     no_permissions_file = open("noPermissionsFile.txt", "w")
     no_permissions_file.write("Your text goes here876182735491256487")
-    subprocess.call(['chmod', '000', no_permissions_file.name])
+    #subprocess.call(['chmod', '000', no_permissions_file.name])
     data_init = dict()
     data_init['example_file1'] = os.path.join(SCRIPT_DIR, 'example1.txt')
     data_init['example_file2'] = os.path.join(SCRIPT_DIR, 'example2.txt')
