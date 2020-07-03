@@ -87,7 +87,7 @@ def test_without_permission_files(data_init):
    :return:
    """
     print('Running test without permission files')
-    no_permissions_file = open(data_init['no_permissions'], "x")
+    no_permissions_file = open(data_init['no_permissions'], "w")
     no_permissions_file.write("Your text goes here876182735491256487")
     os.chmod(data_init['no_permissions'], 0o000)
 
