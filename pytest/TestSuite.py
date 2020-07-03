@@ -15,18 +15,18 @@ def data_init():
     :return:
     """
     # SETUP
-    no_permissions_file = open("noPermissionsFile.txt", "w")
+    no_permissions_file = open("noPermissionsFile.txt", "x")
     no_permissions_file.write("Your text goes here876182735491256487")
-    #subprocess.call(['chmod', '000', no_permissions_file.name])
     data_init = dict()
     data_init['example_file1'] = os.path.join(SCRIPT_DIR, 'example1.txt')
     data_init['example_file2'] = os.path.join(SCRIPT_DIR, 'example2.txt')
     data_init['no_permissions'] = os.path.join(SCRIPT_DIR, no_permissions_file.name)
+    os.chmod(data_init['no_permissions'], 0o000)
     print('doing things to setup')
     yield data_init
     # TEARDOWN
     print('doing things to teardown')
-    subprocess.call(['chmod', '777', data_init['no_permissions']])
+    os.chmod(data_init['no_permissions'], 0o777)
     no_permissions_file.close()
 
 
