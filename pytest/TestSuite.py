@@ -15,19 +15,14 @@ def data_init():
     :return:
     """
     # SETUP
-    no_permissions_file = open(SCRIPT_DIR + "/noPermissionsFile.txt", "x")
-    no_permissions_file.write("Your text goes here876182735491256487")
     data_init = dict()
     data_init['example_file1'] = os.path.join(SCRIPT_DIR, 'example1.txt')
     data_init['example_file2'] = os.path.join(SCRIPT_DIR, 'example2.txt')
-    data_init['no_permissions'] = no_permissions_file.name
-    os.chmod(data_init['no_permissions'], 0o000)
+    data_init['no_permissions'] = os.path.join(SCRIPT_DIR, 'noPermissionsFile.txt')
     print('doing things to setup')
     yield data_init
     # TEARDOWN
     print('doing things to teardown')
-    os.chmod(data_init['no_permissions'], 0o777)
-    no_permissions_file.close()
 
 
 @pytest.mark.negative
@@ -92,6 +87,9 @@ def test_without_permission_files(data_init):
    :return:
    """
     print('Running test without permission files')
+    no_permissions_file = open(data_init['no_permissions'], "x")
+    no_permissions_file.write("Your text goes here876182735491256487")
+    os.chmod(data_init['no_permissions'], 0o000)
 
     # Silence matches prints (prints appears when file read permissions is allowed'):
     with nostdout():
@@ -101,6 +99,9 @@ def test_without_permission_files(data_init):
             assert False
         except PermissionError:
             assert True
+    os.chmod(data_init['no_permissions'], 0o777)
+    no_permissions_file.close()
+
 
 
 @contextlib.contextmanager
