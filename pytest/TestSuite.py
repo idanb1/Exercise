@@ -92,13 +92,13 @@ def test_without_permission_files(data_init):
     os.chmod(data_init['no_permissions'], 0o000)
 
     # Silence matches prints (prints appears when file read permissions is allowed'):
-    with nostdout():
-        try:
-            # Run RegexInFiles with expected file without any permissions
-            runner(files=data_init['no_permissions'], regex=r'\d\d\d\d\d')
-            assert False
-        except PermissionError:
-            assert True
+    # with nostdout():
+    try:
+        # Run RegexInFiles with expected file without any permissions
+        runner(files=data_init['no_permissions'], regex=r'\d\d\d\d\d')
+        assert False
+    except PermissionError:
+        assert True
     os.chmod(data_init['no_permissions'], 0o777)
     no_permissions_file.close()
 
