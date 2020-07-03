@@ -89,8 +89,7 @@ def test_without_permission_files(data_init):
     print('Running test without permission files')
     no_permissions_file = open(data_init['no_permissions'], "w")
     no_permissions_file.write("Your text goes here876182735491256487")
-    no_permissions_file.close()
-    os.chmod(data_init['no_permissions'], S_IREAD | S_IRGRP | S_IROTH)
+    os.chmod(data_init['no_permissions'], S_IREAD)
     # Silence matches prints (prints appears when file read permissions is allowed'):
     # with nostdout():
     try:
