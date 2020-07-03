@@ -15,7 +15,7 @@ def data_init():
     :return:
     """
     # SETUP
-    no_permissions_file = open("noPermissionsFile.txt", "xwa")
+    no_permissions_file = open("noPermissionsFile.txt", "x")
     no_permissions_file.write("Your text goes here876182735491256487")
     data_init = dict()
     data_init['example_file1'] = os.path.join(SCRIPT_DIR, 'example1.txt')
